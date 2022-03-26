@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiemensTroubleshooting.MainPage">
+    <ScrollView>
+        <Grid BackgroundColor="#ffffff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout HorizontalOptions="Center"  Grid.Row="1"  Padding="0,75,0,0">
+                <Image Source="logo.png" HeightRequest="65" ></Image>
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="2" Margin="0,0" Padding="0,45,0,25">
+                <Label Text="Lütfen Giriş Yapın" HorizontalOptions="Center" Padding="0,0,0,0" FontSize="Medium" FontAttributes="Bold" TextColor="Black"></Label>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3"  VerticalOptions="Center" Padding="25,0,25,0">
+                <Label Text="Mail Adresiniz:" TextColor="#252424" FontSize="Body" ></Label>
+                <Entry x:Name="mail" BackgroundColor="#ededed" Placeholder="mail@domain.com"></Entry>
+                <Label Text="Şifre:" TextColor="#252424" FontSize="Body" Padding="0,15,0,0"></Label>
+                <Entry x:Name="sifre" BackgroundColor="#ededed" Placeholder="Şifreniz" IsPassword="True" ></Entry>
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" VerticalOptions="Center" Padding="25,0"  Orientation="Horizontal">
+                <CheckBox x:Name="bilgilerikaydet" Color="Black"></CheckBox>
+                <Label Text="Bilgileri kaydet" VerticalOptions="Center" FontAttributes="Bold"></Label>
+            </StackLayout>
+
+            <StackLayout Grid.Row="5"  HorizontalOptions="Center" Padding="0,25,0,0">
+                <Button Text="Giriş Yap" BackgroundColor="#f26000" TextColor="White" CornerRadius="16" Clicked="Button_Clicked" Padding="45,15" Margin="0,0,0,15"></Button>
+            </StackLayout>
+
+
+        </Grid>
+
+    </ScrollView>
+
+
+</ContentPage>

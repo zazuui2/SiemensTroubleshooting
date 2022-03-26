@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiemensTroubleshooting.Sayfalar.FeedBack">
+    <ContentPage.Content>
+
+            <ScrollView VerticalOptions="Center" Padding="0,0,0,100">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <Label Text="Lütfen Çözüm Hakkında Görüşlerini Bize Bildir" HorizontalOptions="Center" Padding="0,25" TextColor="Black" FontSize="Medium"></Label>
+                </StackLayout>
+                <StackLayout Grid.Row="1" Orientation="Horizontal" >
+                    <CheckBox x:Name="ariza_cozuldu" Color="#f26000" CheckedChanged="Ariza_Cozuldu_Check" ></CheckBox>
+                    <Label x:Name="aclzdulabel" Text="Arıza Çözüldü" VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout Grid.Row="2" Orientation="Horizontal" Padding="0,0,0,25">
+                    <CheckBox x:Name="ariza_cozulmedi" Color="#f26000" CheckedChanged="Ariza_Cozulmedi_Check"></CheckBox>
+                    <Label x:Name="aczlmedilabel" Text="Arıza Çözülmedi" VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <StackLayout Grid.Row="3" Padding="10,0,10,0">
+                    <Label  Text="Görüşleriniz:" TextColor="Black" FontSize="Body" ></Label>
+                    <Editor x:Name="gorus" Text="" AutoSize="TextChanges" BackgroundColor="#ededed"></Editor>
+                    <Button Text="Bildirimi Gönder" TextTransform="None" BackgroundColor="#f26000" TextColor="White" CornerRadius="16" Padding="45,15" HorizontalOptions="Center" Margin="0,0,0,15" Clicked="Button_Clicked"></Button>
+                </StackLayout>
+        </Grid>
+        </ScrollView>
+
+
+    </ContentPage.Content>
+</ContentPage>

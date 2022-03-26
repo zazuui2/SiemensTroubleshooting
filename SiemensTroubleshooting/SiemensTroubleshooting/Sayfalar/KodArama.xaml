@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms" xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations" xmlns:Service="clr-namespace:SiemensTroubleshooting.VMV"
+             x:Class="SiemensTroubleshooting.Sayfalar.KodArama" >
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+        
+        <ScrollView Grid.Row="0">
+        <Grid>
+                <Grid.RowDefinitions>
+                <RowDefinition Height="300"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+            <ScrollView>
+                 <StackLayout Padding="10,0" Grid.Row="0"  >
+                            <ffimageloading:CachedImage 
+                        DownsampleToViewSize="true"
+                        Aspect="AspectFit"   HeightRequest="300"
+                        WidthRequest="300"  x:Name="resimItem">
+                                <ffimageloading:CachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                </ffimageloading:CachedImage.GestureRecognizers>
+                            </ffimageloading:CachedImage>
+                 </StackLayout>
+
+            </ScrollView>
+            <ScrollView VerticalOptions="Start" Grid.Row="1">
+                <StackLayout Padding="10,10">
+                    <Label Padding="0,0" x:Name="aciklama" TextColor="Black" FontSize="19"></Label>
+                </StackLayout>
+                
+            
+                
+            </ScrollView>
+
+            </Grid>
+        </ScrollView>
+        <StackLayout Grid.Row="1" Orientation="Horizontal" Padding="20,5,20,7" VerticalOptions="End" HorizontalOptions="Center">
+            <Button x:Name="ButtonGeri" Text="Gerİ" BackgroundColor="#f26000" TextColor="White" CornerRadius="16" Clicked="Button_Clicked"></Button>
+            <Label VerticalOptions="Center" Padding="35,0,35,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span x:Name="sayacsol" FontAttributes="Bold"></Span>
+                        <Span Text=" / " FontAttributes="Bold"></Span>
+                        <Span x:Name="sayacsag" FontAttributes="Bold"></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Button x:Name="ButtonIleri" Text="İlerİ" BackgroundColor="#f26000" TextColor="White" CornerRadius="16" Clicked="Button_Clicked_1"></Button>
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

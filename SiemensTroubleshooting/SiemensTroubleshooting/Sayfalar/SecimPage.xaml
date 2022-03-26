@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SiemensTroubleshooting.Sayfalar.SecimPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="300"></RowDefinition>
+                    <RowDefinition Height="325"></RowDefinition>
+                    <RowDefinition Height="450"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0"  Padding="0,40,0,0" CornerRadius="30" Margin="10,20,10,10" BorderColor="#f26000">
+                    <StackLayout >
+                        <Label Text="Arıza Kodu:" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Body" TextColor="Black" Margin="0,0,0,15" ></Label>
+                        <Entry x:Name="ariza_kod_u" Margin="75,0" TextTransform="Uppercase" HorizontalTextAlignment="Center" BackgroundColor="#ededed" ></Entry>
+                        <Label Text="Nasıl bulurum?" HorizontalOptions="End" Margin="0,6,75,0" TextColor="#203e78">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Button Text="Arat" BackgroundColor="#f26000" TextColor="White" CornerRadius="16" Padding="45,15" HorizontalOptions="Center" Margin="0,20,0,0" Clicked="Button_Clicked"></Button>
+
+                    </StackLayout>
+
+                </Frame>
+                <Frame Grid.Row="1"  CornerRadius="30" Margin="10" BorderColor="#f26000" >
+                    <StackLayout Grid.Row="1" VerticalOptions="Start">
+                        <Label Text="Cihaz Bakımları" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Body" TextColor="Black" ></Label>
+                        <Label Text="(Haftalık bakımlarda yapmanız gereken talimatlar)" HorizontalOptions="Center"></Label>
+                        <Label Text="Lütfen Cihaz Seçin" TextColor="Black" Padding="20,40,0,20"></Label>
+                        <Picker x:Name="picker" Margin="75,0,75,0" HorizontalTextAlignment="Center" BackgroundColor="#ededed"></Picker>
+                        <Button Text="GÖRÜNTÜLE" BackgroundColor="#f26000" TextColor="White" CornerRadius="16" Padding="45,15" HorizontalOptions="Center" Margin="0,20,0,0" Clicked="Button_Clicked_1"></Button>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="2" CornerRadius="30" Margin="10" BorderColor="#f26000">
+                    <StackLayout>
+                        <Label Text="Kolay Çözümler" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Body" TextColor="Black" ></Label>
+                        <Label Text="Lütfen Cihaz Seçin" TextColor="Black" Padding="20,40,0,20"></Label>
+                        <Picker x:Name="picker2" Margin="75,0,75,0" HorizontalTextAlignment="Center" BackgroundColor="#ededed" SelectedIndexChanged="picker2_SelectedIndexChanged" ></Picker>
+                        <ListView x:Name="liste_kolaycozum" HasUnevenRows="True" ItemTapped="listbakimlar_ItemTapped_1" Margin="10" HorizontalOptions="Center" VerticalOptions="Center">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout VerticalOptions="Start" Orientation="Horizontal">
+                                            <Label Text="{Binding .}" Padding="10"></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+                </Frame>
+            </Grid>
+
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>
