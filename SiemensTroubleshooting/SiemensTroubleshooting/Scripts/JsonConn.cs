@@ -53,6 +53,12 @@ namespace SiemensTroubleshooting.Scripts
             public string[] yazilar { get; set; }
         }
 
+        public class MissCode
+        {
+            public string code { get; set; }
+            public string sender { get; set; }
+        }
+
         public List<UserStaff> Login(string username)
         {
 
@@ -197,5 +203,22 @@ namespace SiemensTroubleshooting.Scripts
             }
 
         }
+
+        public async Task MissingErrorCode (string ariza_kodu, string gonderen)
+        {
+            MainPage maildata = new MainPage();
+            string mail = maildata.Mailler();
+            var datalar = new MissCode()
+            {
+                code = ariza_kodu,
+                sender= gonderen
+            };
+            var jsonString = JsonConvert.SerializeObject(datalar);
+            var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+            var myHttpClient = new HttpClient();
+            HttpResponseMessage response = await myHttpClient.PostAsync("http://93.190.8.28:3000/missing_ariza_kodu", content);
+        }
+
     }
 }

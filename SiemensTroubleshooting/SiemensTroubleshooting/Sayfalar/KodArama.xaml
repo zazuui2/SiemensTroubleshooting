@@ -18,9 +18,9 @@
                     </Grid.RowDefinitions>
             <ScrollView>
                  <StackLayout Padding="10,0" Grid.Row="0"  >
-                            <ffimageloading:CachedImage 
+                            <ffimageloading:CachedImage
                         DownsampleToViewSize="true"
-                        Aspect="AspectFit"   HeightRequest="300"
+                        Aspect="AspectFit"   HeightRequest="300" LoadingPlaceholder="spinner.gif"
                         WidthRequest="300"  x:Name="resimItem">
                                 <ffimageloading:CachedImage.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />

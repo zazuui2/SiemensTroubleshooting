@@ -27,10 +27,10 @@ namespace SiemensTroubleshooting.Sayfalar
 
         }
 
-        private async void listbakimlar_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void listbakimlar_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushAsync(new DetailPage(e.ItemIndex, cihazbasligi.Text, false));
-            
+            string [] data = {e.Item.ToString(), e.ItemIndex.ToString()};
+           Navigation.PushAsync(new KodArama(data, true));
         }
     }
 }

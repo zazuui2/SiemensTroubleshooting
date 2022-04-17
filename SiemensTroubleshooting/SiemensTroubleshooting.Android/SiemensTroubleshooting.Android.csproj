@@ -110,7 +110,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\spinner.gif" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SiemensTroubleshooting\SiemensTroubleshooting.csproj">
       <Project>{FE23C2A8-C297-47EA-AD19-97709C981750}</Project>

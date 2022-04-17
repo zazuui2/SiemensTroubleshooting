@@ -20,8 +20,8 @@ namespace SiemensTroubleshooting.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
             LoadApplication(new SiemensTroubleshooting.App());
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
         }
     }
 }

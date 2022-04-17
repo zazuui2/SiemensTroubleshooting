@@ -39,11 +39,11 @@
                         <Label Text="Lütfen Cihaz Seçin" TextColor="Black" Padding="20,40,0,20"></Label>
                         <Picker x:Name="picker2" Margin="75,0,75,0" HorizontalTextAlignment="Center" BackgroundColor="#ededed" SelectedIndexChanged="picker2_SelectedIndexChanged" ></Picker>
                         <ListView x:Name="liste_kolaycozum" HasUnevenRows="True" ItemTapped="listbakimlar_ItemTapped_1" Margin="10" HorizontalOptions="Center" VerticalOptions="Center">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
+                            <ListView.ItemTemplate >
+                                <DataTemplate >
                                     <ViewCell>
-                                        <StackLayout VerticalOptions="Start" Orientation="Horizontal">
-                                            <Label Text="{Binding .}" Padding="10"></Label>
+                                        <StackLayout VerticalOptions="Start" Orientation="Horizontal" BackgroundColor="#f26000">
+                                            <Label Text="{Binding .}" Padding="10" TextColor="White"></Label>
                                         </StackLayout>
                                     </ViewCell>
                                 </DataTemplate>

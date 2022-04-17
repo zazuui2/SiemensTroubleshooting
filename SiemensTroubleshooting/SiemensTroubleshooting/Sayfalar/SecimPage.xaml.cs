@@ -38,12 +38,14 @@ namespace SiemensTroubleshooting.Sayfalar
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new KodArama(ariza_kod_u.Text));
+            string[] data = {ariza_kod_u.Text};
+            Navigation.PushAsync(new KodArama(data, true));
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new KodArama("HOWTO"));
+            string[] data = { "HOWTO" };
+            Navigation.PushAsync(new KodArama(data, true));
         }
 
         private void Button_Clicked_1(object sender, EventArgs e)
@@ -53,7 +55,8 @@ namespace SiemensTroubleshooting.Sayfalar
 
         private void listbakimlar_ItemTapped_1(object sender, ItemTappedEventArgs e)
         {
-
+            string []data = { picker2.SelectedItem.ToString(), e.ItemIndex.ToString() };
+            Navigation.PushAsync(new KodArama(data, false));
         }
 
         private void picker2_SelectedIndexChanged(object sender, EventArgs e)

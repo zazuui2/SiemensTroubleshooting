@@ -157,4 +157,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\spinner.gif" />
+  </ItemGroup>
 </Project>
